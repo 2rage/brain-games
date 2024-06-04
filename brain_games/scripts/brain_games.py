@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 def greet():
     print(f"Welcome to the Brain Games!")
 
