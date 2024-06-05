@@ -7,9 +7,9 @@ from brain_games.cli import welcome_user, congratulations_user, try_again_user
 
 def gcd(num1, num2):
     if num1 < num2:
-        num, num2 = num2, num1
+        num1, num2 = num2, num1
     for i in range(num2, 0, -1):
-        if num1 % i == 0 and num % i == 0:
+        if num1 % i == 0 and num2 % i == 0:
             return i
 
 

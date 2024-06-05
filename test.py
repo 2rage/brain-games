@@ -7,7 +7,7 @@ def gcd(a, b):
             return i
 
 
-num1 = 12
-num2 = 18
+num1 = 4
+num2 = 3
 result = gcd(num1, num2)
 print(f"НОД чисел {num1} и {num2} равен {result}")
