@@ -1,6 +1,7 @@
 import random
+from brain_games.constants import MAX_ATTEMPTS
 from brain_games.scripts.brain_games import greet
-from brain_games.cli import welcome_user
+from brain_games.cli import welcome_user, congratulations_user, try_again_user
 
 
 def math_addition(number1, number2) -> int:
@@ -21,11 +22,9 @@ def math_division(number1, number2) -> int:
 
 def brain_calc(name):
     print('What is the result of the expression?')
-
-    rounds_to_win = 3
     rounds_played = 0
 
-    while rounds_played < rounds_to_win:
+    while rounds_played < MAX_ATTEMPTS:
 
         random_list = [random.randint(1, 10), random.randint(1, 10)]
         sorted_random_list = sorted(random_list, reverse=True)
@@ -50,16 +49,16 @@ def brain_calc(name):
         elif random_operator == '/':
             correct_answer = math_division(sorted_random_list[0], sorted_random_list[1])
 
-
         if user_answer == correct_answer:
             print('Correct!')
             rounds_played += 1
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            try_again_user(name)
             break
 
-        if rounds_played == rounds_to_win:
-            print(f'Congratulations, {name}!')
+        if rounds_played == MAX_ATTEMPTS:
+            congratulations_user(name)
 
 
 def main():

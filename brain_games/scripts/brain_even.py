@@ -1,14 +1,15 @@
 import prompt
 import random
-from brain_games.cli import welcome_user
+from brain_games.constants import MAX_ATTEMPTS
+from brain_games.cli import welcome_user, congratulations_user, try_again_user
 from brain_games.scripts.brain_games import greet
 
 
 def even_number(name) -> int:
     print('Answer "yes" if the number is even, otherwise answer "no"')
-    try_counter = 3
+    rounds_played = 0
 
-    while try_counter > 0:
+    while rounds_played < MAX_ATTEMPTS:
         random_number = random.randrange(1, 99)
         print(f'Question: {random_number}')
 
@@ -23,11 +24,12 @@ def even_number(name) -> int:
             print('Correct!')
         else:
             print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
+            try_again_user(name)
             break
-        try_counter -= 1
+        rounds_played += 1
 
-    if try_counter == 0:
-        print(f"Congratulations, {name}!")
+    if rounds_played == MAX_ATTEMPTS:
+        congratulations_user(name)
 
 
 def is_even(number):
