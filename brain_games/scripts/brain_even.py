@@ -29,8 +29,6 @@ def even_number() -> int:
     if try_counter == 0:
         print("Congratulations, Kostya!")
 
-    return
-
 
 def is_even(number):
     if number % 2 == 0:
