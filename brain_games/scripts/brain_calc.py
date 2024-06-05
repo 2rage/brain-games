@@ -19,7 +19,7 @@ def math_division(number1, number2) -> int:
     return number1 // number2
 
 
-def brain_calc():
+def brain_calc(name):
     print('What is the result of the expression?')
 
     rounds_to_win = 3
@@ -59,13 +59,13 @@ def brain_calc():
             break
 
         if rounds_played == rounds_to_win:
-            print('Congratulations, Kostya!')
+            print(f'Congratulations, {name}!')
 
 
 def main():
     greet()
-    welcome_user()
-    brain_calc()
+    name = welcome_user() 
+    brain_calc(name)
 
 
 if __name__ == "__main__":
