@@ -1,4 +1,5 @@
 import random
+import prompt
 from brain_games.constants import MAX_ATTEMPTS
 from brain_games.game_logic import get_user_answer_string, print_question, print_correct_answer, print_wrong_answer, print_user_lose, print_user_win
 from brain_games.cli import welcome_user
@@ -14,10 +15,10 @@ def is_even(number):
 
 def handle_game_round(name) -> bool:
     random_number = random.randrange(1, 99)
-    print_question(random_number)
+    print(f'Question: {random_number}')
 
     correct_answer = is_even(random_number)
-    user_answer = get_user_answer_string()
+    user_answer = prompt.string('Your answer: ')
 
     if user_answer != 'yes' and user_answer != 'no':
         print('Error. Please enter answer "yes" or "no"')
