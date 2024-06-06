@@ -24,7 +24,7 @@ def math_division(number1, number2) -> int:
 def generate_expression() -> tuple[int, str, int]:
     num1, num2 = random.randint(1, 10), random.randint(1, 10)
     num1, num2 = max(num1, num2), min(num1, num2)  # Ensure num1 >= num2
-    operator = random.choice(['+', '-', '*', '/'])
+    operator = random.choice(['+', '-', '*'])
     return num1, operator, num2
 
 
