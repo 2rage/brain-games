@@ -33,7 +33,7 @@ def handle_game_round(name) -> bool:
 
 
 def brain_even_number(name) -> int:
-    print('Answer "yes" if the number is even, otherwise answer "no"')
+    print('Answer "yes" if the number is even, otherwise answer "no".')
     rounds_played = 0
 
     while rounds_played < MAX_ATTEMPTS:
