@@ -40,4 +40,4 @@ def print_correct_answer():
 
 def print_wrong_answer(user_answer, correct_answer):
     """Вывод сообщения о неправильном ответе."""
-    print(f'{Fore.RED}{user_answer}{Fore.RESET} is wrong answer ;(. Correct answer was {Fore.GREEN}{correct_answer}{Fore.RESET}')
+    print(f'{Fore.RED}{user_answer}{Fore.RESET} is wrong answer ;(. Correct answer was {Fore.GREEN}{correct_answer}{Fore.RESET}.')
