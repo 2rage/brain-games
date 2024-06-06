@@ -26,7 +26,6 @@ def handle_game_round(name):
         return True
     else:
         print_wrong_answer(user_answer, right_answer)
-        print_user_lose(name)
         return False
 
 
@@ -39,6 +38,7 @@ def brain_greatest_common_divisor(name):
         if handle_game_round(name):
             round_played += 1
         else:
+            print_user_lose(name)
             break
 
     if round_played == MAX_ATTEMPTS:

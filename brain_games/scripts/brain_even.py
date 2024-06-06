@@ -29,7 +29,6 @@ def handle_game_round(name) -> bool:
             return True
         else:
             print_wrong_answer(user_answer, correct_answer)
-            print_user_lose(name)
             return False
 
 def brain_even_number(name) -> int:
@@ -40,6 +39,7 @@ def brain_even_number(name) -> int:
         if handle_game_round(name):
             rounds_played += 1
         else:
+            print_user_lose(name)
             break
 
     if rounds_played == MAX_ATTEMPTS:
