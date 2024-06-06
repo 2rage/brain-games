@@ -30,7 +30,7 @@ def print_user_win(name):
 
 
 def print_user_lose(name):
-    print(f"Let's try again, {Fore.CYAN}{name}{Fore.RESET}")
+    print(f"Let's try again, {Fore.CYAN}{name}{Fore.RESET}!")
 
 
 def print_correct_answer():
