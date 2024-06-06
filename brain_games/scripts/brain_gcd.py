@@ -1,6 +1,14 @@
 import random
 from brain_games.constants import MAX_ATTEMPTS
-from brain_games.game_logic import get_user_answer_integer, print_question, print_correct_answer, print_user_lose, print_user_win, print_wrong_answer
+from brain_games.game_logic import (
+    get_user_answer_integer,
+    print_question,
+    print_correct_answer,
+    print_user_lose,
+    print_user_win,
+    print_wrong_answer,
+)
+
 from brain_games.scripts.brain_games import greet
 from brain_games.cli import welcome_user
 

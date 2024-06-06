@@ -38,6 +38,6 @@ def print_correct_answer():
     print(f'{Fore.GREEN}Correct!{Fore.RESET}')
 
 
-def print_wrong_answer(user_answer, correct_answer):
+def print_wrong_answer(usr_ans, ok_ans):
     """Вывод сообщения о неправильном ответе."""
-    print(f'{Fore.RED}{user_answer}{Fore.RESET} is wrong answer ;(. Correct answer was {Fore.GREEN}{correct_answer}{Fore.RESET}')
+    print(f'{usr_ans}is wrong answer ;(. Correct answer was {ok_ans}')

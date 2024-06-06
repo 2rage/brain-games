@@ -1,5 +1,12 @@
 import random
-from brain_games.game_logic import print_user_lose, print_user_win, get_user_answer_integer, print_question, print_correct_answer, print_wrong_answer
+from brain_games.game_logic import (
+    print_user_lose,
+    print_user_win,
+    get_user_answer_integer,
+    print_question,
+    print_correct_answer,
+    print_wrong_answer,
+)
 from brain_games.cli import welcome_user
 from brain_games.scripts.brain_games import greet
 from brain_games.constants import MAX_ATTEMPTS
@@ -30,10 +37,10 @@ def format_progression(progression):
 
 
 def handle_game_round(name):
-    random_first_num = random.randint(1, 10)
-    random_difference = random.randint(1, 10)
-    random_n = random.randint(5, 15)
-    random_progresison = generate_progression(random_first_num, random_difference, random_n)
+    rnd_num = random.randint(1, 10)
+    rnd_diff = random.randint(1, 10)
+    rnd_n = random.randint(5, 15)
+    random_progresison = generate_progression(rnd_num, rnd_diff, rnd_n)
     removed_number = progression_remove_random_index(random_progresison)
 
     question = format_progression(random_progresison)
