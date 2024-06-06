@@ -13,23 +13,23 @@ def is_even(number):
 
 
 def handle_game_round(name) -> bool:
-        
-        random_number = random.randrange(1, 99)
-        print_question(random_number)
+    random_number = random.randrange(1, 99)
+    print_question(random_number)
 
-        correct_answer = is_even(random_number)
-        user_answer = get_user_answer_string()
+    correct_answer = is_even(random_number)
+    user_answer = get_user_answer_string()
 
-        if user_answer != 'yes' and user_answer != 'no':
-            print('Error. Please enter answer "yes" or "no"')
-            return False
+    if user_answer != 'yes' and user_answer != 'no':
+        print('Error. Please enter answer "yes" or "no"')
+        return False
 
-        if correct_answer == user_answer:
-            print_correct_answer()
-            return True
-        else:
-            print_wrong_answer(user_answer, correct_answer)
-            return False
+    if correct_answer == user_answer:
+        print_correct_answer()
+        return True
+    else:
+        print_wrong_answer(user_answer, correct_answer)
+        return False
+
 
 def brain_even_number(name) -> int:
     print('Answer "yes" if the number is even, otherwise answer "no"')

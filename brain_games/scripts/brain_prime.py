@@ -15,7 +15,7 @@ from brain_games.scripts.brain_games import greet
 def is_prime_number(number: int):
     if number < 2:
         return 'no'
-    
+
     divider = 2
     while divider <= number / 2:
         if number % divider == 0:
@@ -25,7 +25,7 @@ def is_prime_number(number: int):
     return 'yes'
 
 
-def handle_game_round(name:str) -> bool:
+def handle_game_round(name: str) -> bool:
     prime_number = random.randint(1, 100)
     print_question(prime_number)
 
@@ -42,7 +42,7 @@ def handle_game_round(name:str) -> bool:
 
 def brain_prime_game(name):
     print('Answer "yes" if given number is prime. Otherwise answer "no"')
-    
+
     rounds_played = 0
 
     while rounds_played < MAX_ATTEMPTS:

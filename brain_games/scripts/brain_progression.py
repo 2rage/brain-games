@@ -53,7 +53,7 @@ def brain_progression(name):
     print('What number is missing in the progression?')
 
     rounds_played = 0
-    
+
     while rounds_played < MAX_ATTEMPTS:
         if handle_game_round(name):
             rounds_played += 1
