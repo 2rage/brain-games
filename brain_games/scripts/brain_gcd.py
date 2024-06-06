@@ -1,8 +1,8 @@
 import random
-import prompt
 from brain_games.constants import MAX_ATTEMPTS
+from brain_games.game_logic import get_user_answer_integer, print_question, print_correct_answer, print_user_lose, print_user_win, print_wrong_answer
 from brain_games.scripts.brain_games import greet
-from brain_games.cli import welcome_user, congratulations_user, try_again_user
+from brain_games.cli import welcome_user
 
 
 def gcd(num1, num2):
@@ -13,35 +13,42 @@ def gcd(num1, num2):
             return i
 
 
-def greatest_common_divisor(name):
+def handle_game_round(name):
+    random_number1 = random.randint(1, 12)
+    random_number2 = random.randint(1, 12)
+    print_question(random_number1, random_number2)
+
+    user_answer = get_user_answer_integer()
+    right_answer = gcd(random_number1, random_number2)
+
+    if user_answer == right_answer:
+        print_correct_answer()
+        return True
+    else:
+        print_wrong_answer(user_answer, right_answer)
+        print_user_lose(name)
+        return False
+
+
+def brain_greatest_common_divisor(name):
     print('Find the greatest common divisor of given numbers.')
 
     round_played = 0
 
     while round_played < MAX_ATTEMPTS:
-        random_number1 = random.randint(1, 12)
-        random_number2 = random.randint(1, 12)
-
-        print(f'Question: {random_number1} {random_number2}')
-        user_answer = prompt.integer('Your answer: ')
-        right_answer = gcd(random_number1, random_number2)
-
-        if user_answer == right_answer:
-            print('Correct!')
+        if handle_game_round(name):
             round_played += 1
         else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{right_answer}') ")
-            try_again_user(name)
             break
-        
+
     if round_played == MAX_ATTEMPTS:
-        congratulations_user(name)
+        print_user_win(name)
 
 
 def main():
     greet()
     name = welcome_user()
-    greatest_common_divisor(name)
+    brain_greatest_common_divisor(name)
 
 
 if __name__ == "__main__":

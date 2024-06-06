@@ -1,35 +1,8 @@
-import prompt
 import random
 from brain_games.constants import MAX_ATTEMPTS
-from brain_games.cli import welcome_user, congratulations_user, try_again_user
+from brain_games.game_logic import get_user_answer_string, print_question, print_correct_answer, print_wrong_answer, print_user_lose, print_user_win
+from brain_games.cli import welcome_user
 from brain_games.scripts.brain_games import greet
-
-
-def even_number(name) -> int:
-    print('Answer "yes" if the number is even, otherwise answer "no"')
-    rounds_played = 0
-
-    while rounds_played < MAX_ATTEMPTS:
-        random_number = random.randrange(1, 99)
-        print(f'Question: {random_number}')
-
-        correct_answer = is_even(random_number)
-        user_answer = prompt.string('Your answer: ')
-
-        if user_answer != 'yes' and user_answer != 'no':
-            print('Error. Please enter answer "yes" or "no"')
-            break
-
-        if correct_answer == user_answer:
-            print('Correct!')
-        else:
-            print(f"'{user_answer}' is wrong answer ;(. Correct answer was '{correct_answer}'.")
-            try_again_user(name)
-            break
-        rounds_played += 1
-
-    if rounds_played == MAX_ATTEMPTS:
-        congratulations_user(name)
 
 
 def is_even(number):
@@ -39,10 +12,44 @@ def is_even(number):
         return 'no'
 
 
+def handle_game_round(name) -> bool:
+        
+        random_number = random.randrange(1, 99)
+        print_question(random_number)
+
+        correct_answer = is_even(random_number)
+        user_answer = get_user_answer_string()
+
+        if user_answer != 'yes' and user_answer != 'no':
+            print('Error. Please enter answer "yes" or "no"')
+            return False
+
+        if correct_answer == user_answer:
+            print_correct_answer()
+            return True
+        else:
+            print_wrong_answer(user_answer, correct_answer)
+            print_user_lose(name)
+            return False
+
+def brain_even_number(name) -> int:
+    print('Answer "yes" if the number is even, otherwise answer "no"')
+    rounds_played = 0
+
+    while rounds_played < MAX_ATTEMPTS:
+        if handle_game_round(name):
+            rounds_played += 1
+        else:
+            break
+
+    if rounds_played == MAX_ATTEMPTS:
+        print_user_win(name)
+
+
 def main():
     greet()
     name = welcome_user()
-    even_number(name)
+    brain_even_number(name)
 
 
 if __name__ == '__main__':
