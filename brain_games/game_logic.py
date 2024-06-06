@@ -22,7 +22,7 @@ def print_question(question, extra_info1="", extra_info2=""):
     elif extra_info1:
         print(f'{Fore.LIGHTMAGENTA_EX}Question:{Fore.RESET} {question} {extra_info1}')
     else:
-        print(f'Question: {question}')
+        print(f'{Fore.LIGHTMAGENTA_EX}Question:{Fore.RESET} {question}')
 
 
 def print_user_win(name):

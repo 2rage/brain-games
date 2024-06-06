@@ -15,5 +15,5 @@ def welcome_user():
         else:
             break
 
-    print(f'Hello, {Fore.CYAN}{name}{Fore.RESET}')
+    print(f'Hello, {name}')
     return name
