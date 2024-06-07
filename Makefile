@@ -13,11 +13,11 @@ build:
 
 
 publish:
-	poetry publish --dry-run
+	poetry publish
 
 
 package-install:
-	python3 -m pip install dist/*.whl
+	pipx install dist/*.whl
 
 
 lint:
