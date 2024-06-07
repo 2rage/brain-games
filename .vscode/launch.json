@@ -1,0 +1,71 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Brain Games",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "brain_games.scripts.brain_games",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Brain Even",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "brain_games.scripts.brain_even",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": ["brain-even"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Brain Prime",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "brain_games.scripts.brain_prime",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": ["brain-prime"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Brain Calc",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "brain_games.scripts.brain_calc",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": ["brain-calc"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Brain GCD",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "brain_games.scripts.brain_gcd",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": ["brain-gcd"],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "Python: Brain Progression",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "brain_games.scripts.brain_progression",
+            "env": {
+                "PYTHONPATH": "${workspaceFolder}"
+            },
+            "args": ["brain-progression"],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}
