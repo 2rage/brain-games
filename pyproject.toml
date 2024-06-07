@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "hexlet-code"
-version = "0.2.0"
-description = ""
+name = "2rage-brain-games"
+version = "1.0.2"
+description = "2rage-brain-games is a set of console-based brain games built in Python. Each game provides a different mental challenge, ranging from calculations and number theory to recognition of even numbers. The project includes games like 'brain-even', 'brain-calc', 'brain-gcd', 'brain-progression', and 'brain-prime'. Test your mental agility and have fun with this collection of games!"
 authors = ["2rage <the2rage@icloud.com>"]
 readme = "README.md"
 packages = [
